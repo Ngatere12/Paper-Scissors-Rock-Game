@@ -1,5 +1,6 @@
 import sys
 
+print("Welcome to rock, paper or scissors")
 user1 = input("What's your name? ")
 user2 = input("And your name? ")
 user1_answer = input("%s, do yo want to choose rock, paper or scissors?" % user1)
