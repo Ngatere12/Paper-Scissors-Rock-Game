@@ -1,30 +1,39 @@
 import sys
 
-user1 = input("What's your name?")
-user2 = input("And your name?")
-user1_answer = input("%s, do yo want to choose rock, paper or scissors?" % user1)
-user2_answer = input("%s, do you want to choose rock, paper or scissors?" % user2)
+playerA = str(input("Player A, please enter your name "))
+playerB = str(input("Player B, please enter your name "))
 
-def compare(u1, u2):
-    if u1 == u2:
-        return("It's a tie!")
-    elif u1 == 'rock':
-        if u2 == 'scissors':
-            return(user1 + " wins!")
+def rockpaperscissors():
+    powerplayerA = str(input(playerA + " please choose your power: Rock, Paper or Scissors? "))
+    powerplayerB = str(input(playerB + " please choose your power: Rock, Paper or Scissors? "))
+
+    if powerplayerA == powerplayerB:
+        print("Its a tie!")
+    elif powerplayerA == "Rock":
+        if powerplayerB == "Scissors":
+            print(playerA + "wins!")
         else:
-            return(user2 + " wins!")
-    elif u1 == 'scissors':
-        if u2 == 'paper':
-            return("Scissors win!")
+            print(playerB + "wins!")
+    elif powerplayerA == "Paper":
+        if powerplayerB == "Rock":
+            print(playerA + "wins!")
         else:
-            return(user1 + " wins!")
-    elif u1 == 'paper':
-        if u2 == 'rock':
-            return(user2 + " wins!")
+            print(playerB + "wins!")
+    elif powerplayerA == "Scissors":
+        if powerplayerB == "Paper":
+            print(playerA + "wins!")
         else:
-            return("Scissors win!")
-    else:
-        return("Invalid input! You have not entered rock, paper or scissors, try again.")
+            print(playerB + "wins!")
+
+    playagain()
+
+
+def playagain():
+    again = str(input("Would you like to play again? Y/N? "))
+
+    if again == "Y":
+        rockpaperscissors()
+    if again == "N":
         sys.exit()
 
-print(compare(user1_answer, user2_answer))
+rockpaperscissors()
